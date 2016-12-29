@@ -1,7 +1,21 @@
-<bindings xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-          wsdlLocation="file:/Users/admin/git_repositories/prosidney/WSCertification/others/service_document.wsdl"
-          xmlns="http://java.sun.com/xml/ns/jaxws"
-          xmlns:javaee="http://java.sun.com/xml/ns/javaee">
+<jxb:bindings version="1.0"
+              xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+              xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <jxb:bindings schemaLocation="1.xsd" node="/xs:schema">
 
+        <jxb:schemaBindings>
+            <jxb:package name="mapping.custom">
+                <jxb:javadoc>
+                    <![CDATA[
+                            <body>
+                                Package level documentation for
+                                generated package primer.myPo.
+                            </body>
+                        ]]>
+                </jxb:javadoc>
+            </jxb:package>
+        </jxb:schemaBindings>
 
-</bindings>
+    </jxb:bindings>
+    <!-- schemaLocation="po.xsd" node="/xs:schema" -->
+</jxb:bindings>

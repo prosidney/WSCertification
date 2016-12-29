@@ -9,13 +9,9 @@
              targetNamespace="http://impl.ws.server.example.webservicesidcert.com/"
              name="HelloWorldSOAPImplService">
 <types>
-    <xsd:schema>
-        <xsd:import namespace="http://impl.ws.server.example.webservicesidcert.com/" schemaLocation="http://localhost:9000/HelloWorld?xsd=1"/>
+    <xsd:schema id="oi">
+        <xsd:import namespace="http://impl.ws.server.example.webservicesidcert.com/" schemaLocation="1.xsd"/>
     </xsd:schema>
-    <xsd:annotation>
-        <xsd:appinfo>
-        </xsd:appinfo>
-    </xsd:annotation>
 </types>
 <message name="sayHelloWorldFrom">
     <part name="parameters" element="tns:sayHelloWorldFrom"/>

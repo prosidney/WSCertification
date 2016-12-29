@@ -1,0 +1,1 @@
+wsimport -keep service_document.wsdl -b service_customization.xjb

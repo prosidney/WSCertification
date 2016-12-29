@@ -12,11 +12,11 @@ import javax.xml.ws.AsyncHandler;
 import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.Response;
 import javax.xml.ws.ResponseWrapper;
-import com.webservicesidcert.example.server.ws.impl.GetImageResponse;
-import com.webservicesidcert.example.server.ws.impl.GetPersonResponse;
-import com.webservicesidcert.example.server.ws.impl.IExistResponse;
-import com.webservicesidcert.example.server.ws.impl.ObjectFactory;
-import com.webservicesidcert.example.server.ws.impl.Person;
+import mapping.custom.GetImageResponse;
+import mapping.custom.GetPersonResponse;
+import mapping.custom.IExistResponse;
+import mapping.custom.ObjectFactory;
+import mapping.custom.Person;
 
 
 /**
@@ -40,8 +40,8 @@ public interface HelloWorldSOAPImplCustomized {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "sayHelloWorldFrom", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "com.webservicesidcert.example.server.ws.impl.SayHelloWorldFrom")
-    @ResponseWrapper(localName = "sayHelloWorldFromResponse", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "com.webservicesidcert.example.server.ws.impl.SayHelloWorldFromResponse")
+    @RequestWrapper(localName = "sayHelloWorldFrom", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "mapping.custom.SayHelloWorldFrom")
+    @ResponseWrapper(localName = "sayHelloWorldFromResponse", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "mapping.custom.SayHelloWorldFromResponse")
     @Action(input = "http://impl.ws.server.example.webservicesidcert.com/HelloWorldSOAPImpl/sayHelloWorldFromRequest", output = "http://impl.ws.server.example.webservicesidcert.com/HelloWorldSOAPImpl/sayHelloWorldFromResponse")
     public String sayHelloWorldFrom(
         @WebParam(name = "arg0", targetNamespace = "")
@@ -51,11 +51,11 @@ public interface HelloWorldSOAPImplCustomized {
      * 
      * @param arg0
      * @return
-     *     returns javax.xml.ws.Response<com.webservicesidcert.example.server.ws.impl.IExistResponse>
+     *     returns javax.xml.ws.Response<mapping.custom.IExistResponse>
      */
     @WebMethod(operationName = "iExist")
-    @RequestWrapper(localName = "iExist", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "com.webservicesidcert.example.server.ws.impl.IExist")
-    @ResponseWrapper(localName = "iExistResponse", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "com.webservicesidcert.example.server.ws.impl.IExistResponse")
+    @RequestWrapper(localName = "iExist", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "mapping.custom.IExist")
+    @ResponseWrapper(localName = "iExistResponse", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "mapping.custom.IExistResponse")
     public Response<IExistResponse> iExistAsync(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
@@ -68,8 +68,8 @@ public interface HelloWorldSOAPImplCustomized {
      *     returns java.util.concurrent.Future<? extends java.lang.Object>
      */
     @WebMethod(operationName = "iExist")
-    @RequestWrapper(localName = "iExist", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "com.webservicesidcert.example.server.ws.impl.IExist")
-    @ResponseWrapper(localName = "iExistResponse", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "com.webservicesidcert.example.server.ws.impl.IExistResponse")
+    @RequestWrapper(localName = "iExist", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "mapping.custom.IExist")
+    @ResponseWrapper(localName = "iExistResponse", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "mapping.custom.IExistResponse")
     public Future<?> iExistAsync(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0,
@@ -84,8 +84,8 @@ public interface HelloWorldSOAPImplCustomized {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "iExist", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "com.webservicesidcert.example.server.ws.impl.IExist")
-    @ResponseWrapper(localName = "iExistResponse", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "com.webservicesidcert.example.server.ws.impl.IExistResponse")
+    @RequestWrapper(localName = "iExist", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "mapping.custom.IExist")
+    @ResponseWrapper(localName = "iExistResponse", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "mapping.custom.IExistResponse")
     @Action(input = "http://impl.ws.server.example.webservicesidcert.com/HelloWorldSOAPImpl/iExistRequest", output = "http://impl.ws.server.example.webservicesidcert.com/HelloWorldSOAPImpl/iExistResponse")
     public String iExist(
         @WebParam(name = "arg0", targetNamespace = "")
@@ -94,11 +94,11 @@ public interface HelloWorldSOAPImplCustomized {
     /**
      * 
      * @return
-     *     returns javax.xml.ws.Response<com.webservicesidcert.example.server.ws.impl.GetPersonResponse>
+     *     returns javax.xml.ws.Response<mapping.custom.GetPersonResponse>
      */
     @WebMethod(operationName = "getPerson")
-    @RequestWrapper(localName = "getPerson", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "com.webservicesidcert.example.server.ws.impl.GetPerson")
-    @ResponseWrapper(localName = "getPersonResponse", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "com.webservicesidcert.example.server.ws.impl.GetPersonResponse")
+    @RequestWrapper(localName = "getPerson", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "mapping.custom.GetPerson")
+    @ResponseWrapper(localName = "getPersonResponse", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "mapping.custom.GetPersonResponse")
     public Response<GetPersonResponse> getPersonAsync();
 
     /**
@@ -108,8 +108,8 @@ public interface HelloWorldSOAPImplCustomized {
      *     returns java.util.concurrent.Future<? extends java.lang.Object>
      */
     @WebMethod(operationName = "getPerson")
-    @RequestWrapper(localName = "getPerson", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "com.webservicesidcert.example.server.ws.impl.GetPerson")
-    @ResponseWrapper(localName = "getPersonResponse", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "com.webservicesidcert.example.server.ws.impl.GetPersonResponse")
+    @RequestWrapper(localName = "getPerson", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "mapping.custom.GetPerson")
+    @ResponseWrapper(localName = "getPersonResponse", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "mapping.custom.GetPersonResponse")
     public Future<?> getPersonAsync(
         @WebParam(name = "asyncHandler", targetNamespace = "")
         AsyncHandler<GetPersonResponse> asyncHandler);
@@ -117,12 +117,12 @@ public interface HelloWorldSOAPImplCustomized {
     /**
      * 
      * @return
-     *     returns com.webservicesidcert.example.server.ws.impl.Person
+     *     returns mapping.custom.Person
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getPerson", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "com.webservicesidcert.example.server.ws.impl.GetPerson")
-    @ResponseWrapper(localName = "getPersonResponse", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "com.webservicesidcert.example.server.ws.impl.GetPersonResponse")
+    @RequestWrapper(localName = "getPerson", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "mapping.custom.GetPerson")
+    @ResponseWrapper(localName = "getPersonResponse", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "mapping.custom.GetPersonResponse")
     @Action(input = "http://impl.ws.server.example.webservicesidcert.com/HelloWorldSOAPImpl/getPersonRequest", output = "http://impl.ws.server.example.webservicesidcert.com/HelloWorldSOAPImpl/getPersonResponse")
     public Person getPerson();
 
@@ -130,11 +130,11 @@ public interface HelloWorldSOAPImplCustomized {
      * 
      * @param arg0
      * @return
-     *     returns javax.xml.ws.Response<com.webservicesidcert.example.server.ws.impl.GetImageResponse>
+     *     returns javax.xml.ws.Response<mapping.custom.GetImageResponse>
      */
     @WebMethod(operationName = "getImage")
-    @RequestWrapper(localName = "getImage", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "com.webservicesidcert.example.server.ws.impl.GetImage")
-    @ResponseWrapper(localName = "getImageResponse", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "com.webservicesidcert.example.server.ws.impl.GetImageResponse")
+    @RequestWrapper(localName = "getImage", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "mapping.custom.GetImage")
+    @ResponseWrapper(localName = "getImageResponse", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "mapping.custom.GetImageResponse")
     public Response<GetImageResponse> getImageAsync(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
@@ -147,8 +147,8 @@ public interface HelloWorldSOAPImplCustomized {
      *     returns java.util.concurrent.Future<? extends java.lang.Object>
      */
     @WebMethod(operationName = "getImage")
-    @RequestWrapper(localName = "getImage", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "com.webservicesidcert.example.server.ws.impl.GetImage")
-    @ResponseWrapper(localName = "getImageResponse", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "com.webservicesidcert.example.server.ws.impl.GetImageResponse")
+    @RequestWrapper(localName = "getImage", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "mapping.custom.GetImage")
+    @ResponseWrapper(localName = "getImageResponse", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "mapping.custom.GetImageResponse")
     public Future<?> getImageAsync(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0,
@@ -163,8 +163,8 @@ public interface HelloWorldSOAPImplCustomized {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getImage", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "com.webservicesidcert.example.server.ws.impl.GetImage")
-    @ResponseWrapper(localName = "getImageResponse", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "com.webservicesidcert.example.server.ws.impl.GetImageResponse")
+    @RequestWrapper(localName = "getImage", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "mapping.custom.GetImage")
+    @ResponseWrapper(localName = "getImageResponse", targetNamespace = "http://impl.ws.server.example.webservicesidcert.com/", className = "mapping.custom.GetImageResponse")
     @Action(input = "http://impl.ws.server.example.webservicesidcert.com/HelloWorldSOAPImpl/getImageRequest", output = "http://impl.ws.server.example.webservicesidcert.com/HelloWorldSOAPImpl/getImageResponse")
     public byte[] getImage(
         @WebParam(name = "arg0", targetNamespace = "")
