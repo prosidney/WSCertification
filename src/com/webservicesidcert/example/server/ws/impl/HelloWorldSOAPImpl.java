@@ -9,6 +9,7 @@ import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
 import javax.xml.ws.soap.Addressing;
+import javax.xml.ws.soap.AddressingFeature;
 import java.awt.*;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -21,7 +22,7 @@ import java.util.Iterator;
 @WebService()
 //@BindingType(value = javax.xml.ws.ws.SOAPBinding.SOAP11HTTP_MTOM_BINDING)
 @SOAPBinding(style = SOAPBinding.Style.DOCUMENT)
-//@Addressing
+@Addressing(enabled = true, required = false, responses = AddressingFeature.Responses.ANONYMOUS)
 public class HelloWorldSOAPImpl implements HelloWorldSOAP {
 
   @WebMethod

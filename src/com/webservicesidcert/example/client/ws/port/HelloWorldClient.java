@@ -1,5 +1,6 @@
 package com.webservicesidcert.example.client.ws.port;
 
+import com.sun.xml.ws.api.addressing.WSEndpointReference;
 import com.webservicesidcert.example.client.ws.port.handler.ClientHandler;
 import com.webservicesidcert.example.client.ws.port.handler.EchoHandlerClient;
 import com.webservicesidcert.example.server.ws.impl.HelloWorldSOAP;
@@ -25,7 +26,8 @@ public class HelloWorldClient {
 
         Service s = Service.create(url, serviceName);
         QName portname = s.getPorts().next();
-        HelloWorldSOAP port = s.getPort(portname, HelloWorldSOAP.class, new AddressingFeature(false, false));
+        HelloWorldSOAP port = s.getPort(portname, HelloWorldSOAP.class, new AddressingFeature(true, false, AddressingFeature.Responses.NON_ANONYMOUS));
+
 
         List<Handler> hchain = new LinkedList<Handler>();
         hchain.add(new EchoHandlerClient());
@@ -36,7 +38,7 @@ public class HelloWorldClient {
         binding.setHandlerChain(hchain);
 
 
-        System.out.println(port.sayHelloWorldFrom("Sidney"));
+        System.out.println(port.sayHelloWorldFrom("Opa"));
         /*
         System.out.println(port.iExist("Sidney"));
         System.out.println(port.getImage(null));
