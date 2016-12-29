@@ -1,0 +1,20 @@
+<bindings xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+          wsdlLocation="file:/Users/admin/git_repositories/prosidney/WSCertification/others/service_document.wsdl"
+          xmlns="http://java.sun.com/xml/ns/jaxws">
+
+    <!-- applies to wsdl:definitions node, that would mean the entire wsdl -->
+    <enableWrapperStyle>true</enableWrapperStyle>
+
+    <!-- Mesma coisa de aplicar para todo o wsdl -->
+    <bindings node="wsdl:definitions">
+        <package name="by.boot.java">
+            <javadoc>Mathutil package</javadoc>
+        </package>
+    </bindings>
+
+    <!-- wsdl:portType operation customization -->
+    <bindings node="wsdl:definitions/wsdl:portType[@name='HelloWorldSOAPImpl']/wsdl:operation[@name='sayHelloWorldFrom']">
+        <!-- change java method name from addNumbers() to add() -->
+        <enableWrapperStyle>false</enableWrapperStyle>
+    </bindings>
+</bindings>

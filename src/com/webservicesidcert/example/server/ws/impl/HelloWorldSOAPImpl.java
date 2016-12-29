@@ -18,8 +18,8 @@ import java.util.Iterator;
  */
 @WebService()
 //@BindingType(value = javax.xml.ws.ws.SOAPBinding.SOAP11HTTP_MTOM_BINDING)
-@SOAPBinding(style = SOAPBinding.Style.RPC)
-@Addressing
+@SOAPBinding(style = SOAPBinding.Style.DOCUMENT)
+//@Addressing
 public class HelloWorldSOAPImpl implements HelloWorldSOAP {
 
   @WebMethod

@@ -1,0 +1,8 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws.server.example.webservicesidcert.com/">
+    <xs:complexType name="person">
+        <xs:sequence>
+            <xs:element name="age" type="xs:int"/>
+            <xs:element name="name" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

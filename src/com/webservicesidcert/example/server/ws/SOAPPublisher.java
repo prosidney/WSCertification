@@ -26,7 +26,7 @@ public class SOAPPublisher {
         handlerChain.add(new ServiceHandler());
         binding.setHandlerChain(handlerChain);
 
-        //\\SOAPBinding soapBinding = (SOAPBinding) endpoint.getBinding();
+        //SOAPBinding soapBinding = (SOAPBinding) endpoint.getBinding();
         //soapBinding.setMTOMEnabled(true);
 
         endpoint.publish(address);
