@@ -1,8 +1,54 @@
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws.server.example.webservicesidcert.com/">
+<xs:schema xmlns:tns="http://impl.ws.server.example.webservicesidcert.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://impl.ws.server.example.webservicesidcert.com/">
+    <xs:element name="getImage" type="tns:getImage"/>
+    <xs:element name="getImageResponse" type="tns:getImageResponse"/>
+    <xs:element name="getPerson" type="tns:getPerson"/>
+    <xs:element name="getPersonResponse" type="tns:getPersonResponse"/>
+    <xs:element name="iExist" type="tns:iExist"/>
+    <xs:element name="iExistResponse" type="tns:iExistResponse"/>
+    <xs:element name="sayHelloWorldFrom" type="tns:sayHelloWorldFrom"/>
+    <xs:element name="sayHelloWorldFromResponse" type="tns:sayHelloWorldFromResponse"/>
+    <xs:complexType name="iExist">
+        <xs:sequence>
+            <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="iExistResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="getImage">
+        <xs:sequence>
+            <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="getImageResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:base64Binary" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="getPerson">
+        <xs:sequence/>
+    </xs:complexType>
+    <xs:complexType name="getPersonResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:person" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
     <xs:complexType name="person">
         <xs:sequence>
             <xs:element name="age" type="xs:int"/>
             <xs:element name="name" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="sayHelloWorldFrom">
+        <xs:sequence>
+            <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="sayHelloWorldFromResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 </xs:schema>

@@ -1,5 +1,7 @@
 package com.webservicesidcert.example.server.ws.impl;
 
+import com.webservicesidcert.example.server.ws.model.Person;
+
 import javax.imageio.ImageIO;
 import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
@@ -37,8 +39,8 @@ public class HelloWorldSOAPImpl implements HelloWorldSOAP {
   }
 
     @WebMethod
-    public com.webservicesidcert.example.wsimport.Person getPerson() {
-        com.webservicesidcert.example.wsimport.Person p = new com.webservicesidcert.example.wsimport.Person();
+    public Person getPerson() {
+        Person p = new Person();
         p.setName("Sidney");
         p.setAge(28);
 

@@ -1,5 +1,7 @@
 package com.webservicesidcert.example.server.ws.impl;
 
+import com.webservicesidcert.example.server.ws.model.Person;
+
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import java.awt.*;
@@ -16,7 +18,7 @@ public interface HelloWorldSOAP {
     public String iExist(String from);
 
     @WebMethod
-    public com.webservicesidcert.example.wsimport.Person getPerson();
+    public Person getPerson();
 
     @WebMethod
     public Image getImage(String name);

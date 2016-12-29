@@ -1,20 +1,32 @@
 <bindings xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
           wsdlLocation="file:/Users/admin/git_repositories/prosidney/WSCertification/others/service_document.wsdl"
-          xmlns="http://java.sun.com/xml/ns/jaxws">
+          xmlns="http://java.sun.com/xml/ns/jaxws"
+          xmlns:javaee="http://java.sun.com/xml/ns/javaee">
 
     <!-- applies to wsdl:definitions node, that would mean the entire wsdl -->
     <enableWrapperStyle>true</enableWrapperStyle>
+    <enableAsyncMapping>true</enableAsyncMapping>
 
     <!-- Mesma coisa de aplicar para todo o wsdl -->
     <bindings node="wsdl:definitions">
         <package name="by.boot.java">
             <javadoc>Mathutil package</javadoc>
         </package>
+
+        <!-- Deveria funcionar, não funcionou -->
+        <javaee:handler-chain>
+            <javaee:handler-chain-name>LoggingHandlers</javaee:handler-chain-name>
+            <javaee:handler>
+                <javaee:handler-name>Logger</javaee:handler-name>
+                <javaee:handler-class>fby.boot.java.handler.LoggingHandler</javaee:handler-class>
+            </javaee:handler>
+        </javaee:handler-chain>
     </bindings>
+
 
     <!-- wsdl:portType operation customization -->
     <bindings node="wsdl:definitions/wsdl:portType[@name='HelloWorldSOAPImpl']/wsdl:operation[@name='sayHelloWorldFrom']">
-        <!-- change java method name from addNumbers() to add() -->
-        <enableWrapperStyle>false</enableWrapperStyle>
+        <enableWrapperStyle>true</enableWrapperStyle>
+        <enableAsyncMapping>false</enableAsyncMapping>
     </bindings>
 </bindings>
