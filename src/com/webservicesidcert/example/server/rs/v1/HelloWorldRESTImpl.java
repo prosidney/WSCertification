@@ -30,16 +30,8 @@ public class HelloWorldRESTImpl implements Provider<Source> {
 
         MessageContext mctx = wctx.getMessageContext();
         String httpVerb = (String) mctx.get(MessageContext.HTTP_REQUEST_METHOD);
-        httpVerb = httpVerb.trim().toUpperCase();
 
-        List<String> retorno = new ArrayList<String>();
-        retorno.add("Oi");
-        retorno.add("AMOR");
-        retorno.add("EU");
-        retorno.add("TE");
-        retorno.add("AMO");
-
-        if (httpVerb.equals("GET")) return toSource(toXml(retorno.toArray()));
+        if (httpVerb.equals("GET")) return toSource("OI GET");
         else if (httpVerb.equals("POST")) return toSource("OI POST");
         else if (httpVerb.equals("PUT")) return toSource("OI PUT");
         else if (httpVerb.equals("DELETE")) return toSource("OI DELETE");
