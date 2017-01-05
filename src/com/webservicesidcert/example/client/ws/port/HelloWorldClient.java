@@ -26,7 +26,8 @@ public class HelloWorldClient {
 
         Service s = Service.create(url, serviceName);
         QName portname = s.getPorts().next();
-        HelloWorldSOAP port = s.getPort(portname, HelloWorldSOAP.class, new AddressingFeature(true, false, AddressingFeature.Responses.NON_ANONYMOUS));
+        HelloWorldSOAP port = s.getPort(portname, HelloWorldSOAP.class,
+                new AddressingFeature(true, false, AddressingFeature.Responses.NON_ANONYMOUS));
 
 
         List<Handler> hchain = new LinkedList<Handler>();
