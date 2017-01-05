@@ -19,11 +19,11 @@ import java.util.Iterator;
 /**
  * Created by Sidney on 16-12-10.
  */
-@WebService(endpointInterface = "com.webservicesidcert.example.server.ws.impl.HelloWorldSOAP")
+@WebService
 //@BindingType(value = javax.xml.ws.ws.SOAPBinding.SOAP11HTTP_MTOM_BINDING)
 @SOAPBinding(style = SOAPBinding.Style.DOCUMENT)
 @Addressing(enabled = true, required = false, responses = AddressingFeature.Responses.ANONYMOUS)
-public class HelloWorldSOAPImpl implements HelloWorldSOAP {
+public class HelloWorldSOAPImpl{
 
   @WebMethod
   public String sayHelloWorldFrom(String from) {
